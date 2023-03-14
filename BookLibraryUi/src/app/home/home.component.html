@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row" style="display:flex; justify-content: center;">
+        <div class="col">
+            <mat-card style="width: fit-content; padding: 1rem 10rem;">
+                <mat-card-title>Add a new book</mat-card-title>
+                <mat-card-content>
+                    <div class="row" style="width: 250px">
+                        <mat-form-field style="width: -webkit-fill-available;">
+                            <mat-label>Author</mat-label>
+                            <input type="text" matInput name="author" [(ngModel)]="bookModel.author">
+                        </mat-form-field>
+                    </div>
+                    <div class="row" style="width: 250px">
+                        <mat-form-field style="width: -webkit-fill-available;">
+                            <mat-label>Description</mat-label>
+                            <input type="text" matInput name="description" [(ngModel)]="bookModel.description">
+                        </mat-form-field>
+                    </div>
+                    <div class="row" style="width: 250px">
+                        <mat-form-field appearance="fill" style="width: -webkit-fill-available;">
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker" [(ngModel)]="bookModel.date">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker #picker></mat-datepicker>
+                            
+
+                        </mat-form-field>
+                    </div>
+                    <div class="row" style=" text-align: center; margin-top: 1rem;">
+                        <button mat-raised-button style="width: 8rem;" (click)="addBook()">Add Book</button>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
+<div class="book-list">
+    <div *ngFor="let book of books">
+        <mat-card style="margin-top: 1rem">
+            <h2>{{book.author}}</h2>
+            <mat-card-content>
+                <p>Description: {{book.description}}</p>
+                <p>Added on: {{book.date}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
