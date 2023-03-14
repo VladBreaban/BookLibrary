@@ -8,7 +8,7 @@ For the frontned, I am using Angular with clasic Angular Material UI installed f
 
 If you want to run this project make sure that:
 - you have  version of SQL Server installed on your computer
-- Run "update-database" in order to create the database ( be sure that you modify the connection string in appsettings)
+- Run "update-database" in order to create the database ( Replace the server in the connection string with the corresponding name of you sql server instance )
 - run the backend (using an IDE, like VS)
 - run the frontend ( using ng serve)
 
